@@ -13,6 +13,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
+  static const List<Widget> _appBarOption =[
+    Text("Home"),
+    Text("Favorite"),
+    Text("Profile"),
+
+  ];
   static const List _widgetoption=<Widget>[
     HomeWidget(),
     FavouriteWidget(),
@@ -22,7 +28,15 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _widgetoption.elementAt(_selectedIndex),
+      appBar: AppBar(
+        title: _appBarOption[_selectedIndex],
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        // title: _appBarOption.elementAt(_selectedIndex),
+        elevation: 0,
+      ),
+         body: _widgetoption[_selectedIndex],
+      // body: _widgetoption.elementAt(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (value) {
           setState(() {
@@ -43,12 +57,12 @@ class _HomePageState extends State<HomePage> {
 
         ],
         ),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        title: const Text("Favourite items",style: TextStyle(color: Colors.black),),
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.white,
+      //   centerTitle: true,
+      //   title: const Text("Favourite items",style: TextStyle(color: Colors.black),),
+      //   elevation: 0,
+      // ),
     );
   }
 }
