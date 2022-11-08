@@ -28,9 +28,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: _appBarOption[_selectedIndex],
+        actions: const [Icon(Icons.more_horiz)],
+        // title: _appBarOption[_selectedIndex],
         backgroundColor: Colors.white,
+        leading: const Icon(Icons.arrow_back),
         centerTitle: true,
         // title: _appBarOption.elementAt(_selectedIndex),
         elevation: 0,
@@ -57,12 +60,7 @@ class _HomePageState extends State<HomePage> {
 
         ],
         ),
-      // appBar: AppBar(
-      //   backgroundColor: Colors.white,
-      //   centerTitle: true,
-      //   title: const Text("Favourite items",style: TextStyle(color: Colors.black),),
-      //   elevation: 0,
-      // ),
+      
     );
   }
 }
