@@ -28,11 +28,12 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.blueAccent,
       appBar: AppBar(
-        actions: const [Icon(Icons.more_horiz)],
+        // backgroundColor: Colors.blueAccent,
+        // actions: const [Icon(Icons.more_horiz)],
         // title: _appBarOption[_selectedIndex],
-        leading: const Icon(Icons.arrow_back),
+        //  leading: const Icon(Icons.arrow_back),
         centerTitle: true,
         // title: _appBarOption.elementAt(_selectedIndex),
         elevation: 0,

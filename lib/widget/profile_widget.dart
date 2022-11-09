@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:state_app/providers/counter.dart';
 
 class ProfileWidget extends StatelessWidget {
   const ProfileWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  SafeArea(
+    return  Scaffold(
+      backgroundColor: Color.fromARGB(255, 190, 230, 249),
+      appBar: AppBar(
+        // backgroundColor: Colors.blueAccent,
+        leading: const Icon(Icons.arrow_back),
+        actions:const [Icon(Icons.more_horiz)]
+      ),
+      body: Center(
       child:SingleChildScrollView(
           child: Column(
             children: [
@@ -16,7 +25,8 @@ class ProfileWidget extends StatelessWidget {
               width: 150,
               padding: const EdgeInsets.all(10),
               decoration: const BoxDecoration(
-                   color: Color.fromARGB(255, 31, 67, 85),
+                   color: Colors.white,
+
                 borderRadius: BorderRadius.all(Radius.circular(15.0)),
                 image: DecorationImage(image: AssetImage("assets/images/signup.jpeg"),
                 fit: BoxFit.cover)
@@ -30,10 +40,11 @@ class ProfileWidget extends StatelessWidget {
                 child: const Text("Stephanie Milton",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),),
               ),
               ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-                onPressed: (){}, child: const Text("favourite",style:TextStyle(color:Colors.black),),),
+                onPressed: (){}, child: Text("favourite ${context.watch<Couter>().number.toString()}",style:const TextStyle(color:Colors.black),),),
+                const SizedBox(height: 70),
             Container(
               decoration: const BoxDecoration(
-                color: Color.fromARGB(26, 111, 54, 54),
+                color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(15.0)),
               ),
               child:Column(
@@ -84,7 +95,7 @@ class ProfileWidget extends StatelessWidget {
             ),
 
            ],
-       ))); 
+       )))); 
           
     
   }
