@@ -8,22 +8,22 @@ class ProfileWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: Color.fromARGB(255, 190, 230, 249),
+      backgroundColor: const Color.fromARGB(255, 190, 230, 249),
       appBar: AppBar(
         // backgroundColor: Colors.blueAccent,
         leading: const Icon(Icons.arrow_back),
         actions:const [Icon(Icons.more_horiz)]
       ),
-      body: Center(
+      body: SafeArea(
       child:SingleChildScrollView(
           child: Column(
             children: [
-              // const Padding(
-              //   padding: EdgeInsets.fromLTRB(10, 10, 10, 400)),
+              const Padding(
+               padding: EdgeInsets.fromLTRB(10, 10, 10, 20)),
              Container(
               height: 150,
               width: 150,
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.only(top: 20, bottom:20),
               decoration: const BoxDecoration(
                    color: Colors.white,
 
@@ -41,7 +41,7 @@ class ProfileWidget extends StatelessWidget {
               ),
               ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                 onPressed: (){}, child: Text("favourite ${context.watch<Couter>().number.toString()}",style:const TextStyle(color:Colors.black),),),
-                const SizedBox(height: 70),
+                const SizedBox(height: 20),
             Container(
               decoration: const BoxDecoration(
                 color: Colors.white,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:state_app/providers/counter.dart';
+import 'package:state_app/providers/favorite_provider.dart';
 import 'package:state_app/screens/home_screen.dart';
 
 void main() {
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers:[
-        ChangeNotifierProvider(create: (_)=>Couter())
+        ChangeNotifierProvider(create: (context)=>Couter()),
+        ChangeNotifierProvider(create: ((context) => FavoriteProvider())),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
